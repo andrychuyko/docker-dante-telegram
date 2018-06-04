@@ -30,8 +30,8 @@ class DanteConfigGenerator
   def generate
     <<~CONFIG
       logoutput: stderr
-      internal: eth0 port = 1080
-      external: eth0
+      internal: ens3 port = 1080
+      external: ens3
       clientmethod: none
       socksmethod: #{ENV['with_users'] ? 'username' : 'none'}
       user.privileged: root
