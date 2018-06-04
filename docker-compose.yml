@@ -8,9 +8,6 @@ services:
         all_networks: 'true'
     ports:
       - "1080:1080"
-    logging:
-      options:
-        tag: dante
     restart: unless-stopped
     tmpfs: /tmp
     read_only: true
