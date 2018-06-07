@@ -65,6 +65,7 @@ tg://socks?server=telegram.example.com&port=1080&user=ojab&pass=fakepassword2
 # Signle user can be shown using grep
 $ rake "users:list" | grep ojab
 tg://socks?server=vpn.example.com&port=1080&user=ojab&pass=fakepassword2
+```
 
 ## Setup
 
