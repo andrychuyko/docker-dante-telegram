@@ -65,3 +65,19 @@ tg://socks?server=telegram.example.com&port=1080&user=ojab&pass=fakepassword2
 # Signle user can be shown using grep
 $ rake "users:list" | grep ojab
 tg://socks?server=vpn.example.com&port=1080&user=ojab&pass=fakepassword2
+
+## Setup
+
+```sh
+apt-get update
+apt-get install -y git curl software-properties-common apt-transport-https
+apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
+apt-add-repository 'deb https://apt.dockerproject.org/repo ubuntu-xenial main'
+apt-get update
+apt-get install -y docker-engine
+curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+git clone https://github.com/andrychuyko/docker-dante-telegram.git
+cd docker-dante-telegram/
+docker-compose up
+docker start docker-dante-telegram_dante_all_networks_1
